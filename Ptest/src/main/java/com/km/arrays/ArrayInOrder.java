@@ -7,22 +7,37 @@ public class ArrayInOrder
 {
     public static void main(String[] args)
     {
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("enter the flag: ");
+         Boolean flag=scanner.nextBoolean();
         int array[]={4,3,5,6,1,2};
 
-        for (int i=0; i<=array.length-1;i++)
-        {
-            for (int j=1; j<=array.length-1;j++)
-            {
-              int smallest=array[i];
-                if (array[i] > array[j])
-                {
-                     smallest=array[j];
+        if (flag) {
+            for (int i = 0; i <= array.length - 1; i++) {
+                for (int j = i + 1; j <= array.length - 1; j++) {
+                    if (array[i] > array[j]) {
+                        int temp = array[j];
+                        array[j] = array[i];
+                        array[i] = temp;
 
+                    }
                 }
-                System.out.println(smallest);
+                System.out.println(array[i]);
             }
-
         }
+        else
+        {
+            for (int i = 0; i <= array.length - 1; i++) {
+                for (int j = i + 1; j <= array.length - 1; j++) {
+                    if (array[i] < array[j]) {
+                        int temp = array[j];
+                        array[j] = array[i];
+                        array[i] = temp;
 
+                    }
+                }
+                System.out.println(array[i]);
+            }
+        }
     }
 }
