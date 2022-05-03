@@ -1,4 +1,4 @@
-package com.km.stringReverseOrder;
+package com.kmc.pa;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class RemoveDuplicateWords {
 		Scanner sc = new Scanner(System.in);
 		// Accept any sentence from User
 		System.out.print("Enter your sentence: ");
-		sentence = sc.nextLine().toLowerCase();  //convert to lower case
+		sentence = sc.nextLine();
 
 		// Split the given sentence to get each word as String array
 		allWords = sentence.split(" ");
@@ -28,20 +28,10 @@ public class RemoveDuplicateWords {
 		// Convert to String
 		for (String word : allWords) {
 			if (word != "remove") {
-				result = result + word + " ";
+				result = word + " "+ result ;
 			}
 		}
-		String words[] = result.split(" ");
-		String reversedString = "";
-
-//Reverse each word's position
-		for (int i = 0; i < words.length; i++) {
-			if (i == words.length - 1)
-				reversedString = words[i] + reversedString;
-			else
-				reversedString = " " + words[i] + reversedString;
-		}
 		// Display given String after removing duplicates
-		System.out.println("\nSentence after removing duplicate words: " + reversedString);
+		System.out.println("\nSentence after removing duplicate words: " + result);
 	}
 }

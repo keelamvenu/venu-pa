@@ -1,4 +1,4 @@
-package com.kmc.streams;
+package com.kmc.pa;
 
 import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 import org.apache.kafka.common.serialization.Serde;
